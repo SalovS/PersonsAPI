@@ -1,13 +1,12 @@
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args){
-        List<Person> persons = new ArrayList<>();
+
         PeopleGenerator generator = new PeopleGenerator();
-        for(int i = 0; i < 450; i++){
-            persons.add(generator.generatePerson());
-        }
+
+        List<Person> persons = generator.generatePerson();
+
         int countPersons = persons.size();
 
         int mens = (int) persons.stream()
