@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class PeopleGenerator {
     Random random = new Random();
-    private final int minAge = 3;
-    private final int maxAge = 90;
+    private final int MIN_AGE = 3;
+    private final int MAX_AGE = 90;
     public List<Person> generatePerson(){
         List<Person> person = new ArrayList<>();
 
@@ -20,19 +20,19 @@ public class PeopleGenerator {
 
         for(String name: maleName){
             for(String surname: maleSurnames){
-                person.add(new Person(name,surname, generateAge(),Person.gender.male));
+                person.add(new Person(name,surname, generateAge(),Gender.MALE));
             }
         }
 
         for(String name: maleName){
             for(String surname: maleSurnames){
-                person.add(new Person(name,generateFemaleSurname(surname), generateAge(),Person.gender.female));
+                person.add(new Person(name,generateFemaleSurname(surname), generateAge(),Gender.FEMALE));
             }
         }
         return person;
     }
     private int generateAge(){
-        return random.nextInt(maxAge) + minAge;
+        return random.nextInt(MAX_AGE) + MIN_AGE;
     }
     private String generateFemaleSurname(String surname) {
         char[] sN = surname.toCharArray();

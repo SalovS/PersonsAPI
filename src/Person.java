@@ -2,9 +2,9 @@ public class Person {
     private String name;
     private String soname;
     private int age;
-    private gender sex;
+    private Gender sex;
 
-    public Person(String name, String soname, int age, gender sex) {
+    public Person(String name, String soname, int age, Gender sex) {
         this.name = name;
         this.soname = soname;
         this.age = age;
@@ -23,13 +23,8 @@ public class Person {
         return age;
     }
 
-    public gender getSex() {
+    public Gender getSex() {
         return sex;
-    }
-
-    enum gender{
-        male,
-        female
     }
 }
 
